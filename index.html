@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulación Autopista</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <main>
+        <form>
+          <h1>Simulación de sistemas</h1>
+          <p class="subtitle">
+            Seleccione un rango de fechas y horas para empezar la simulación
+          </p>
+          <fieldset>
+            <label>Inicio de la simulación: </label>
+            <input
+              style="height: 100%"
+              type="date"
+              id="startDate"
+              onchange="onChange(this.value, 0)"
+            />
+
+            <select name="startHours" id="startHours">
+              <option value=""></option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label>Fin de la simulación: </label>
+            <input
+              style="height: 100%"
+              type="date"
+              id="endDate"
+              onchange="onChange(this.value, 1)"
+            />
+            <select name="endHours" id="endHours">
+              <option value="">Cargando</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <button type="button" class="button" onclick="setAgain()">
+              Reset
+            </button>
+            <button type="button" class="button" onclick="tryout()">
+              Simular
+            </button>
+          </fieldset>
+        </form>
+        <div class="nombres">
+          <p>Silvestri, Carlos. C.I: 26.551.729</p>
+          <p>Rincón, Pedro. C.I: 27.849.02</p>
+          <p>Vera, Valerie. C.I: 27.192.811</p>
+        </div>
+      </main>
+      <div class="console" id="msdos">
+        <p>Consola</p>
+      </div>
+    </div>
+
+    <script src="./variables.js"></script>
+    <script src="./simulation.js"></script>
+    <script src="./dates.js"></script>
+  </body>
+</html>
